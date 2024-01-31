@@ -21,11 +21,11 @@
 
         <div class="flex gap-2 pt-2">
           <UButton>Read</UButton>
-          <UButton color="sandy-brown">
+          <UButton color="brown">
             Edit
           </UButton>
 
-          <UButton class="!bg-[#EB5757] hover:!bg-[#EB5757]/80">
+          <UButton color="danger">
             Delete
           </UButton>
         </div>
