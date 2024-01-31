@@ -1,4 +1,3 @@
-import type { variants } from '#tailwind-config';
 <template>
   <header class="bg-purple-400 p-2">
     <UContainer class="flex">
@@ -72,15 +71,5 @@ import type { variants } from '#tailwind-config';
         </div>
       </template>
     </UCard>
-    <!-- <UCard class="w-full inline-block">
-      <NuxtImg class="mx-auto" src="https://picsum.photos/200/300" width="145" fit="cover" />
-      <template #footer>
-        <div class="flex flex-col">
-          <span>The Housemaid</span>
-          <span>by <ULink to="#" class="underline text-[#2F80ED]">Freida McFadden</ULink></span>
-          <span>date <ULink to="#" class="text-[#2F80ED]">August 2023</ULink> </span>
-        </div>
-      </template>
-    </UCard> -->
   </UContainer>
 </template>
