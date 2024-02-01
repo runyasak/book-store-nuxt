@@ -2,6 +2,7 @@
 const query = gql`
   query Books {
     books {
+      bookId
       title
       coverImageUrl
       publishedDate
@@ -24,16 +25,6 @@ const { data } = await useAsyncQuery<{ books: {
 </script>
 
 <template>
-  <header class="bg-purple-400 p-2">
-    <UContainer class="flex">
-      <span class="font-bold">
-        Book Store Management
-      </span>
-      <span class="ml-auto">
-        YOUR NAME
-      </span>
-    </UContainer>
-  </header>
   <UContainer class="grid gap-4 p-4 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4">
     <BookDetailCard
       v-for="book of data.books"
@@ -41,6 +32,8 @@ const { data } = await useAsyncQuery<{ books: {
       :title="book.title"
       :cover-image-url="book.coverImageUrl"
       :author-name="book.author.name"
+      :published-date="book.publishedDate"
+      @click-read="$router.push({ name: 'books-bookId', params: { bookId: book.bookId } })"
     />
   </UContainer>
 </template>

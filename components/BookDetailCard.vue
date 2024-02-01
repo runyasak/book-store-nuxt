@@ -1,5 +1,13 @@
 <script setup lang="ts">
-defineProps<{ title: string, coverImageUrl: string, authorName: string }>()
+import dayjs from 'dayjs'
+
+const props = defineProps<{ title: string, coverImageUrl: string, authorName: string, publishedDate: string }>()
+
+defineEmits<{
+  clickRead: []
+}>()
+
+const formatPublishedDate = computed(() => dayjs(props.publishedDate).format('MMMM D YYYY'))
 </script>
 
 <template>
@@ -9,11 +17,13 @@ defineProps<{ title: string, coverImageUrl: string, authorName: string }>()
       <div class="flex flex-col">
         <span>{{ title }}</span>
         <span>by <ULink to="#" class="text-[#2F80ED] underline">{{ authorName }}</ULink></span>
-        <span>date <ULink to="#" class="text-[#2F80ED]">August 2023</ULink> </span>
+        <span>date <ULink to="#" class="text-[#2F80ED]">{{ formatPublishedDate }}</ULink> </span>
       </div>
 
       <div class="flex gap-2 pt-2">
-        <UButton>Read</UButton>
+        <UButton @click="$emit('clickRead')">
+          Read
+        </UButton>
         <UButton color="brown">
           Edit
         </UButton>
