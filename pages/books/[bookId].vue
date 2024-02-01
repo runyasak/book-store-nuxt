@@ -54,7 +54,7 @@ const book = computed(() => data.value.books[0])
         <span>
           Rating :
         </span>
-        <IconHeart />
+        <IconHeart v-for="index of book.rating" :key="index" />
       </div>
       <div class="pt-8 font-bold">
         Description :
