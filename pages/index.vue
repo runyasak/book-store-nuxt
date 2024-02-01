@@ -13,15 +13,19 @@ const query = gql`
   }
 `
 
-const { data } = await useAsyncQuery<{ books: {
-  bookId: number
-  title: string
-  coverImageUrl: string
-  publishedDate: string
-  author: {
-    name: string
-  }
-}[] }>(query)
+interface QueryBooks {
+  books: {
+    bookId: number
+    title: string
+    coverImageUrl: string
+    publishedDate: string
+    author: {
+      name: string
+    }
+  }[]
+}
+
+const { data } = await useAsyncQuery<QueryBooks>(query)
 </script>
 
 <template>

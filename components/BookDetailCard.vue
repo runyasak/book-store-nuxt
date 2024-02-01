@@ -1,7 +1,12 @@
 <script setup lang="ts">
 import dayjs from 'dayjs'
 
-const props = defineProps<{ title: string, coverImageUrl: string, authorName: string, publishedDate: string }>()
+const props = defineProps<{
+  title: string
+  coverImageUrl: string
+  authorName: string
+  publishedDate: string
+}>()
 
 defineEmits<{
   clickRead: []
