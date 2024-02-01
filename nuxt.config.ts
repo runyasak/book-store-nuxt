@@ -12,4 +12,10 @@ export default defineNuxtConfig({
       },
     },
   },
+  build: {
+    transpile: [
+      '@apollo/client',
+      'ts-invariant/process',
+    ],
+  },
 })

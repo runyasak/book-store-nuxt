@@ -10,6 +10,8 @@ const props = defineProps<{
 
 defineEmits<{
   clickRead: []
+  clickEdit: []
+  clickDelete: []
 }>()
 
 const formatPublishedDate = computed(() => dayjs(props.publishedDate).format('MMMM D YYYY'))
@@ -29,11 +31,11 @@ const formatPublishedDate = computed(() => dayjs(props.publishedDate).format('MM
         <UButton @click="$emit('clickRead')">
           Read
         </UButton>
-        <UButton color="brown">
+        <UButton color="brown" @click="$emit('clickEdit')">
           Edit
         </UButton>
 
-        <UButton color="danger">
+        <UButton color="danger" @click="$emit('clickDelete')">
           Delete
         </UButton>
       </div>
